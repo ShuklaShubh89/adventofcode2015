@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-@Library('pipeline-utils') _
+@Library('pipeline-utils')
 
 yarnBuildPipeline(
       skipPrecommit: true
