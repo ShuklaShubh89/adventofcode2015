@@ -1,4 +1,4 @@
-fsdfdfsda
+adadasdasdsdfdfsda
 ef config = new HashMap()
 def bindings = getBinding()
 config.putAll(bindings.getVariables())
