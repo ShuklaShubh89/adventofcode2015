@@ -1,4 +1,5 @@
-def config = new HashMap()
+dsda
+ef config = new HashMap()
 def bindings = getBinding()
 config.putAll(bindings.getVariables())
 def out = config['out']
