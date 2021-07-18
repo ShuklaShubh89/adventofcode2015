@@ -2,7 +2,7 @@ import sys
 from collections import defaultdict
 
 def def_value():
-    return '0'
+    return 0
 
 dictlights = defaultdict(def_value)
 
@@ -24,13 +24,11 @@ for x in strings:
     for y in range(xcoordinate1, xcoordinate2+1):
         for z in range(ycoordinate1, ycoordinate2+1):
             if(operation=='toggle'):
-                if(dictlights[str(y),str(z)]=='1'):
-                    dictlights[str(y),str(z)] = '0'
-                else:
-                    dictlights[str(y),str(z)] = '1'
-            elif(operation=='on' and dictlights[str(y),str(z)]=='0'):
-                    dictlights[str(y),str(z)] = '1'
-            elif(operation=='off' and dictlights[str(y),str(z)]=='1'):
-                    dictlights[str(y),str(z)] = '0'
+                dictlights[str(y),str(z)]+= 2
+            elif(operation=='on'):
+                dictlights[str(y),str(z)]+= 1
+            elif(operation=='off'):
+                if(dictlights[str(y),str(z)]>=1):
+                    dictlights[str(y),str(z)]-= 1
                     
-print(list(dictlights.values()).count('1'))
+print(sum(list(dictlights.values())))
